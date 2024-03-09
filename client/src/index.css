@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgb(241, 245, 241);
+}
+
+
+/* Style the scrollbar thumb (the draggable part) */
+.swiper-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Style the scrollbar track (the non-draggable part) */
+.swiper-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
