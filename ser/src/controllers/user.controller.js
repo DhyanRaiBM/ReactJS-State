@@ -56,7 +56,7 @@ export const signUp = asyncHandler(async (req, res, next) => {
 
 })
 
-//=Sign In :
+//=Sign In- :
 export const signIn = asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -86,9 +86,11 @@ export const signIn = asyncHandler(async (req, res, next) => {
     const cookieOptions = {
         secure: true, // Only transmit cookie over HTTPS
         httpOnly: true, // Cookie is not accessible via client-side scripts
-        sameSite: 'Strict', // Restrict cookie to same site requests
+        sameSite: 'None', // Restrict cookie to same site requests
         // maxAge: 3600000, // Expiry time in milliseconds (e.g., 1 hour)
     };
+
+    console.log(accessToken, refreshToken);
 
     res
         .status(200)
@@ -117,8 +119,8 @@ export const googleSignIn = asyncHandler(async (req, res) => {
     const cookieOptions = {
         secure: true, // Only transmit cookie over HTTPS
         httpOnly: true, // Cookie is not accessible via client-side scripts
-        sameSite: 'Strict', // Restrict cookie to same site requests
-        // maxAge: 3600000, // Expiry time in milliseconds (e.g., 1 hour)
+        sameSite: 'None', // Allows the cookie to be sent with cross-site requests
+        maxAge: 3600000, // Expiry time in milliseconds (e.g., 1 hour)
     };
 
     if (user) {

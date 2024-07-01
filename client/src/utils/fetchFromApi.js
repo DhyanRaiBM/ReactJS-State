@@ -4,7 +4,8 @@ const customAxios = axios.create({
     validateStatus: function (status) {
         // Resolve only if the status code is in the range of 200-499
         return status >= 200 && status < 500;
-    }
+    },
+    withCredentials: true // Ensure credentials (cookies) are included in requests
 });
 
 export const fetchFromApi = async (url, data = {}, method = 'GET', options = {}) => {
@@ -14,6 +15,7 @@ export const fetchFromApi = async (url, data = {}, method = 'GET', options = {})
             'Content-Type': 'application/json'
         },
         ...options, // Allow overriding default options
+        withCredentials: true // Ensure credentials (cookies) are included in requests
     };
 
     try {
@@ -29,4 +31,3 @@ export const fetchFromApi = async (url, data = {}, method = 'GET', options = {})
         throw new Error('An error occurred during API request');
     }
 };
-
