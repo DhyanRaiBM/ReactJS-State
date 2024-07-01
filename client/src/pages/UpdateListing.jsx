@@ -38,7 +38,7 @@ export default function UpdateListing() {
     useEffect(()=>{
         ;(async function fetchListing (){
             try {
-                const data=await fetchFromApi(`/api/listings/get-listing/${params.id}`);
+                const data=await fetchFromApi(`https://react-state-api-production.up.railway.app/api/listings/get-listing/${params.id}`);
                 if(data.statusCode === 401){
                     console.log('log error 1');
                     const response =await refreshAccessToken();
@@ -168,7 +168,7 @@ export default function UpdateListing() {
         if (+formData.regularPrice < +formData.discountPrice)
           return notifyError('Discount price must be lower than regular price');
         setLoading(true);
-        const data= await fetchFromApi(`/api/listings/update/${params.id}`,formData,'PATCH');
+        const data= await fetchFromApi(`https://react-state-api-production.up.railway.app/api/listings/update/${params.id}`,formData,'PATCH');
         if(data.statusCode === 401){
           console.log('log error 1');
           const response =await refreshAccessToken();

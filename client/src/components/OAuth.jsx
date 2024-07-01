@@ -18,7 +18,7 @@ const OAuth = () => {
             const user = result.user;
             
             const data=await fetchFromApi(
-                "/api/users/google",
+                "https://react-state-api-production.up.railway.app/api/users/google",
                 {
                     username: user.displayName,
                     email:user.email,

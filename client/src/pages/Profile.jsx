@@ -84,7 +84,7 @@ export default function Profile() {
     e.preventDefault();
     try {
       setLoading(true);
-      const data= await fetchFromApi('/api/users/update',formData,'PATCH');
+      const data= await fetchFromApi('https://react-state-api-production.up.railway.app/api/users/update',formData,'PATCH');
 
       if(data.statusCode === 401){
         const response =await refreshAccessToken();
@@ -124,7 +124,7 @@ export default function Profile() {
   //=Handle sign out:
   async function handleSignOut(){
      try {
-        const data=await fetchFromApi("/api/users/signout",{},"POST");
+        const data=await fetchFromApi("https://react-state-api-production.up.railway.app/api/users/signout",{},"POST");
         dispatch(signOutUser());
         if(data.success){
           notifySuccess(data.message);
@@ -148,7 +148,7 @@ export default function Profile() {
   //=Handle delete user :
   async function handleDelete(){
     try {
-      const data= await fetchFromApi('/api/users/delete',{},'POST');
+      const data= await fetchFromApi('https://react-state-api-production.up.railway.app/api/users/delete',{},'POST');
 
       if(data.statusCode === 401){
         const response =await refreshAccessToken();
@@ -177,7 +177,7 @@ export default function Profile() {
   //=Handle show listings :
   async function showListings() {
     try {
-      const data = await fetchFromApi('/api/listings/get-listings');
+      const data = await fetchFromApi('https://react-state-api-production.up.railway.app/api/listings/get-listings');
       if(data.statusCode === 401){
         const response =await refreshAccessToken();
         if(response.statusCode === 401){
@@ -203,7 +203,7 @@ export default function Profile() {
   //=Handle delete listings:
   async function handleListingDelete(listingId) {
     try {
-      const data = await fetchFromApi(`/api/listings/delete/${listingId}`,{},'DELETE');
+      const data = await fetchFromApi(`https://react-state-api-production.up.railway.app/api/listings/delete/${listingId}`,{},'DELETE');
       if(data.statusCode === 401){
         console.log('1');
         const response =await refreshAccessToken();

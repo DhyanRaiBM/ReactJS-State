@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const data = await fetchFromApi('/api/listings/get?offer=true&limit=4');
+        const data = await fetchFromApi('https://react-state-api-production.up.railway.app/api/listings/get?offer=true&limit=4');
         setOfferListings(data?.data);
         fetchRentListings();
       } catch (error) {
@@ -26,7 +26,7 @@ export default function Home() {
     };
     const fetchRentListings = async () => {
       try {
-        const data = await fetchFromApi('/api/listings/get?type=rent&limit=4');
+        const data = await fetchFromApi('https://react-state-api-production.up.railway.app/api/listings/get?type=rent&limit=4');
         setRentListings(data?.data);
         fetchSaleListings();
       } catch (error) {
@@ -36,7 +36,7 @@ export default function Home() {
 
     const fetchSaleListings = async () => {
       try {
-        const data = await fetchFromApi('/api/listings/get?type=sale&limit=4');
+        const data = await fetchFromApi('https://react-state-api-production.up.railway.app/api/listings/get?type=sale&limit=4');
         setSaleListings(data?.data);
       } catch (error) {
         console.log(error);

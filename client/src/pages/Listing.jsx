@@ -36,7 +36,7 @@ export default function Listing() {
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const data=await fetchFromApi(`/api/listings/get-listing/${params.id}`);
+        const data=await fetchFromApi(`https://react-state-api-production.up.railway.app/api/listings/get-listing/${params.id}`);
         if(data.statusCode === 401){
             console.log('log error 1');
             const response =await refreshAccessToken();

@@ -56,7 +56,7 @@ export default function Search() {
     setLoading(true);
     setShowMore(false);
     const searchQuery = urlParams.toString();
-    const data = await fetchFromApi(`/api/listings/get?${searchQuery}`);
+    const data = await fetchFromApi(`https://react-state-api-production.up.railway.app/api/listings/get?${searchQuery}`);
     if (data.data?.length > 8) {
       setShowMore(true);
     } else {
@@ -126,7 +126,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set('startIndex', startIndex);
     const searchQuery = urlParams.toString();
-    const data = await fetchFromApi(`/api/listings/get?${searchQuery}`);
+    const data = await fetchFromApi(`https://react-state-api-production.up.railway.app/api/listings/get?${searchQuery}`);
     if (data.data?.length < 9) {
       setShowMore(false);
     }
