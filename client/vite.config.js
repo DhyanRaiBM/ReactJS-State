@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://react-state-api-production.up.railway.app/',
+        target: 'https://react-state-api-production.up.railway.app',
         secure: false,
       },
     },
