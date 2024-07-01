@@ -25,7 +25,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
         setLoading(true);
-        const data= await fetchFromApi('https://react-state-api-production.up.railway.app/api/users/signin',formData,'POST');
+        const data= await fetchFromApi('/api/users/signin',formData,'POST');
         if(!data.success) {
           setLoading(false);
           setError({
