@@ -23,7 +23,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
         setLoading(true);
-        const data= await fetchFromApi('/api/users/signup',formData,'POST');
+        const data= await fetchFromApi('https://react-state-api-production.up.railway.app/api/users/signup',formData,'POST');
 
         if(!data.success) {
           setLoading(false);
