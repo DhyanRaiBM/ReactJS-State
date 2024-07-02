@@ -22,4 +22,4 @@ HousingPortal is a modern real estate platform built with React, Redux, MongoDB,
 - **Favorites**: Save and manage your favorite property listings.
 
 **Note:**
-HousingPortal is deployed on Vercel. Explore the live demo of HousingPortal here: [Live Demo](https://react-js-state-git-master-dhyan-rais-projects.vercel.app/).
+HousingPortal is deployed on Vercel. Explore the live demo of HousingPortal here: [Live Demo](https://react-js-state-dxiovsl44-dhyan-rais-projects.vercel.app/).
